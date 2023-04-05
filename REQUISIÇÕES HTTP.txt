@@ -1,0 +1,52 @@
+
+-----Requisição HTTP------
+
+URL: https://pokeapi.co/api/v2/pokemon
+IP = Endereço | path = Caminho de identificação do recurso.
+
+IP: https://pokeapi.co | path: /api/v2/pokemon
+
+Request Methods: {REST} --> GET | POST | PUT | DELETE.
+
+----Path Params and Query String-----
+
+1º Passagem de parâmetro pelo Path, por exemplo:
+    https://pokeapi.co/api/v2/pokemon/${id} <-- Buscar através do id do pokemon.
+
+2º Passagem de parâmetro através da Query String, por exemplo: 
+    https://pokeapi.co/api/v2/pokemon?type=grass&name=i <-- Buscar através do tipo e da inicial do nome do pokemon.
+    https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20 <-- Paginação 20 pokemons por página, offset=20, limit=20
+
+-----Request Headers-----
+
+Request Headers:
+    Descrição das Configuração da API, exemplo:
+    accept-language: <--{Linguagens aceitas e suas prioridades}
+    en-US, <--{q=1 (prioridade máxima, quando não se passa parametro de prioridade)}
+    en;q=0.9 <--{linguagem /(;) prioridade}
+    ,pt-BR;q=0.8
+    ,pt;q=0.7
+
+Resoponse Headers
+    Descrição das configuração da API
+
+-----Request Body------
+*Envio e requisição de conteúdo
+Body recebe dados dos métodos POST E PUT.
+ - Por exemplo -> se content-type for json:
+{
+    "name": "Bulbasaur"
+}
+
+-----Status Code-----
+
+Ref para vários status code: https://httpstatusdogs.com/
+
+Response Headers
+Response Body
+
+Status Code retorna um número com o STATUS da requisição;
+200 - 2999 <--- SUCCESS.
+300 - 399 <--- indica que a solicitação tem mais de uma resposta possível.
+400 - 499 <--- Client ERROR.
+500 - 599 <--- SERVER ERROR.
